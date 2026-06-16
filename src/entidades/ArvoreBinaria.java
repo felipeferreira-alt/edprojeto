@@ -212,7 +212,7 @@ public class ArvoreBinaria {
     }
  
 
-     6.+
+
 
     private void cabecalhoTabela() {
         System.out.println();
