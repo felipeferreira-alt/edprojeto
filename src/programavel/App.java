@@ -7,11 +7,7 @@ import entidades.Filmes;
 public class App {
     private static final Scanner sc = new Scanner(System.in);
  
-    // ================================================================
-    // ENTRADA SEGURA
-    // ================================================================
- 
-    /** Lê um inteiro dentro do intervalo [min, max]. Rejeita lixo. */
+  
     private static int lerInteiro(String mensagem, int min, int max) {
         while (true) {
             System.out.print(mensagem);
@@ -27,7 +23,7 @@ public class App {
         }
     }
  
-    /** Lê um double dentro do intervalo [min, max]. Aceita vírgula ou ponto. */
+  
     private static double lerDouble(String mensagem, double min, double max) {
         while (true) {
             System.out.print(mensagem);
@@ -58,9 +54,7 @@ public class App {
         }
     }
  
-    // ================================================================
-    // MENU
-    // ================================================================
+   
     private static void exibirMenu() {
         System.out.println();
         System.out.println("  ╔══════════════════════════════════════════════╗");
@@ -81,9 +75,7 @@ public class App {
         System.out.println("  ╚══════════════════════════════════════════════╝");
     }
  
-    // ================================================================
-    // MAIN
-    // ================================================================
+ 
     public static void main(String[] args) throws Exception {
         ArvoreBinaria arvore = new ArvoreBinaria();
         int opcao;
@@ -94,9 +86,7 @@ public class App {
  
             switch (opcao) {
  
-                // ------------------------------------------------
-                // 1. INSERIR
-                // ------------------------------------------------
+              
                 case 1 -> {
                     System.out.println("\n  --- INSERIR FILME ---");
                     int codigo = lerInteiro("  Codigo (1 - 9999): ", 1, 9999);
@@ -115,9 +105,7 @@ public class App {
                     arvore.inserir(new Filmes(codigo, nome, genero, ano, nota));
                 }
  
-                // ------------------------------------------------
-                // 2. BUSCAR
-                // ------------------------------------------------
+               
                 case 2 -> {
                     System.out.println("\n  --- BUSCAR FILME ---");
                     int codigo = lerInteiro("  Codigo do filme: ", 1, 9999);
@@ -127,9 +115,7 @@ public class App {
                         "  Filme com codigo " + codigo + " nao encontrado.");
                 }
  
-                // ------------------------------------------------
-                // 3. REMOVER
-                // ------------------------------------------------
+            
                 case 3 -> {
                     System.out.println("\n  --- REMOVER FILME ---");
                     if (arvore.estaVazia()) {
@@ -144,36 +130,26 @@ public class App {
                             "  Filme com codigo " + codigo + " nao encontrado.");
                 }
  
-                // ------------------------------------------------
-                // 4. EM ORDEM
-                // ------------------------------------------------
                 case 4 -> {
                     System.out.println("\n  --- FILMES EM ORDEM (in-order) ---");
                     if (!arvore.exibirEmOrdem())
                         System.out.println("  Catalogo vazio.");
                 }
  
-                // ------------------------------------------------
-                // 5. PRÉ-ORDEM
-                // ------------------------------------------------
+             
                 case 5 -> {
                     System.out.println("\n  --- FILMES EM PRE-ORDEM ---");
                     if (!arvore.exibirPreOrdem())
                         System.out.println("  Catalogo vazio.");
                 }
  
-                // ------------------------------------------------
-                // 6. PÓS-ORDEM
-                // ------------------------------------------------
+            
                 case 6 -> {
                     System.out.println("\n  --- FILMES EM POS-ORDEM ---");
                     if (!arvore.exibirPosOrdem())
                         System.out.println("  Catalogo vazio.");
                 }
  
-                // ------------------------------------------------
-                // 7. MAIOR CÓDIGO
-                // ------------------------------------------------
                 case 7 -> {
                     System.out.println("\n  --- FILME COM MAIOR CODIGO ---");
                     Filmes f = arvore.maiorCodigo();
@@ -181,9 +157,7 @@ public class App {
                     else System.out.println("  Catalogo vazio.");
                 }
  
-                // ------------------------------------------------
-                // 8. MENOR CÓDIGO
-                // ------------------------------------------------
+           
                 case 8 -> {
                     System.out.println("\n  --- FILME COM MENOR CODIGO ---");
                     Filmes f = arvore.menorCodigo();
@@ -191,21 +165,15 @@ public class App {
                     else System.out.println("  Catalogo vazio.");
                 }
  
-                // ------------------------------------------------
-                // 9. QUANTIDADE
-                // ------------------------------------------------
+               
                 case 9 -> System.out.println(
                     "\n  Total de filmes no catalogo: " + arvore.quantidade());
  
-                // ------------------------------------------------
-                // 10. ALTURA
-                // ------------------------------------------------
+            
                 case 10 -> System.out.println(
                     "\n  Altura da arvore: " + arvore.altura());
  
-                // ------------------------------------------------
-                // 11. FILMES ACIMA DE NOTA
-                // ------------------------------------------------
+                
                 case 11 -> {
                     System.out.println("\n  --- FILMES ACIMA DE NOTA ---");
                     if (arvore.estaVazia()) {
@@ -222,9 +190,6 @@ public class App {
                         System.out.printf("  %d filme(s) encontrado(s).%n", total);
                 }
  
-                // ------------------------------------------------
-                // 12. ENCERRAR
-                // ------------------------------------------------
                 case 12 -> System.out.println("\n  Sistema encerrado. Ate mais!");
  
             }
