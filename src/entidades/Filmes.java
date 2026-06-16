@@ -49,7 +49,6 @@ public class Filmes {
         );
     }
  
-    /** Linha compacta para listas */
     public String toLinhaTabela() {
         return String.format("  [%04d] %-38s | %-18s | %4d | %.1f",
             codigo, nome, genero, ano, nota);
