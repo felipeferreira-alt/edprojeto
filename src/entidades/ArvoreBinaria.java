@@ -62,16 +62,15 @@ public class ArvoreBinaria {
         } else if (codigo > nos.getFilme().getCodigo()) {
             nos.setDireito(removerRecursivo(nos.getDireito(), codigo));
         } else {
-            // Nó encontrado — três casos:
-            // Caso 1: sem filhos
+            
             if (nos.getEsquerdo() == null && nos.getDireito() == null)
                 return null;
  
-            // Caso 2: um filho
+            
             if (nos.getEsquerdo() == null) return nos.getDireito();
             if (nos.getDireito()  == null) return nos.getEsquerdo();
  
-            // Caso 3: dois filhos — substitui pelo sucessor in-order (menor da subárvore direita)
+            
             no sucessor = menorNoRecursivo(nos.getDireito());
             nos.setFilme(sucessor.getFilme());
             nos.setDireito(removerRecursivo(nos.getDireito(), sucessor.getFilme().getCodigo()));
