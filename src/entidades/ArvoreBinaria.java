@@ -3,20 +3,16 @@ package entidades;
 public class ArvoreBinaria {
      private no raiz;
  
-    // ----------------------------------------------------------------
-    // Construtor
-    // ----------------------------------------------------------------
+    
     public ArvoreBinaria() {
         this.raiz = null;
     }
  
-    // ================================================================
-    // 1. INSERIR
-    // ================================================================
+    
     public void inserir(Filmes filme) {
         raiz = inserirRecursivo(raiz, filme);
     }
- 
+
     private no inserirRecursivo(no nos, Filmes filme) {
         if (nos == null) {
             System.out.println("  Filme inserido com sucesso!");
@@ -33,9 +29,9 @@ public class ArvoreBinaria {
         return nos;
     }
  
-    // ================================================================
-    // 2. BUSCAR
-    // ================================================================
+
+
+     
     public Filmes buscar(int codigo) {
         no resultado = buscarRecursivo(raiz, codigo);
         return (resultado != null) ? resultado.getFilme() : null;
@@ -49,9 +45,9 @@ public class ArvoreBinaria {
         return buscarRecursivo(nos.getDireito(), codigo);
     }
  
-    // ================================================================
-    // 3. REMOVER
-    // ================================================================
+
+
+     
     public boolean remover(int codigo) {
         if (buscar(codigo) == null) return false;
         raiz = removerRecursivo(raiz, codigo);
@@ -83,9 +79,9 @@ public class ArvoreBinaria {
         return nos;
     }
  
-    // ================================================================
-    // 4. EXIBIR EM ORDEM (in-order: esq → raiz → dir)
-    // ================================================================
+
+
+     
     public boolean exibirEmOrdem() {
         if (raiz == null) return false;
         cabecalhoTabela();
@@ -100,9 +96,9 @@ public class ArvoreBinaria {
         emOrdemRecursivo(nos.getDireito());
     }
  
-    // ================================================================
-    // 5. EXIBIR EM PRÉ-ORDEM (raiz → esq → dir)
-    // ================================================================
+
+
+     
     public boolean exibirPreOrdem() {
         if (raiz == null) return false;
         cabecalhoTabela();
@@ -117,9 +113,9 @@ public class ArvoreBinaria {
         preOrdemRecursivo(nos.getDireito());
     }
  
-    // ================================================================
-    // 6. EXIBIR EM PÓS-ORDEM (esq → dir → raiz)
-    // ================================================================
+
+
+     
     public boolean exibirPosOrdem() {
         if (raiz == null) return false;
         cabecalhoTabela();
@@ -134,9 +130,9 @@ public class ArvoreBinaria {
         System.out.println(nos.getFilme().toLinhaTabela());
     }
  
-    // ================================================================
-    // 7. MAIOR CÓDIGO
-    // ================================================================
+
+
+     
     public Filmes maiorCodigo() {
         if (raiz == null) return null;
         return maiorNoRecursivo(raiz).getFilme();
@@ -147,9 +143,9 @@ public class ArvoreBinaria {
         return maiorNoRecursivo(nos.getDireito());
     }
  
-    // ================================================================
-    // 8. MENOR CÓDIGO
-    // ================================================================
+
+
+     
     public Filmes menorCodigo() {
         if (raiz == null) return null;
         return menorNoRecursivo(raiz).getFilme();
@@ -160,9 +156,10 @@ public class ArvoreBinaria {
         return menorNoRecursivo(nos.getEsquerdo());
     }
  
-    // ================================================================
-    // 9. QUANTIDADE DE FILMES
-    // ================================================================
+
+
+
+     
     public int quantidade() {
         return quantidadeRecursivo(raiz);
     }
@@ -173,9 +170,10 @@ public class ArvoreBinaria {
                  + quantidadeRecursivo(nos.getDireito());
     }
  
-    // ================================================================
-    // 10. ALTURA DA ÁRVORE
-    // ================================================================
+
+
+
+     
     public int altura() {
         return alturaRecursivo(raiz);
     }
@@ -187,9 +185,9 @@ public class ArvoreBinaria {
         return 1 + Math.max(altEsq, altDir);
     }
  
-    // ================================================================
-    // 11. FILMES ACIMA DE DETERMINADA NOTA
-    // ================================================================
+
+
+     
     public int exibirAcimaDaNota(double nota) {
         cabecalhoTabela();
         return acimaDaNotaRecursivo(raiz, nota);
@@ -207,16 +205,16 @@ public class ArvoreBinaria {
             + acimaDaNotaRecursivo(nos.getDireito(), nota);
     }
  
-    // ================================================================
-    // VERIFICAÇÃO DE VAZIO
-    // ================================================================
+
+
+     
     public boolean estaVazia() {
         return raiz == null;
     }
  
-    // ================================================================
-    // AUXILIAR — cabeçalho da tabela
-    // ================================================================
+
+     6.+
+
     private void cabecalhoTabela() {
         System.out.println();
         System.out.printf("  %-6s %-40s %-20s %-6s %s%n",
