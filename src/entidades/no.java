@@ -5,18 +5,14 @@ public class no {
     private no    esquerdo;
     private no    direito;
  
-    // ----------------------------------------------------------------
-    // Construtor
-    // ----------------------------------------------------------------
+   
     public no(Filmes filme) {
         this.filme    = filme;
         this.esquerdo = null;
         this.direito  = null;
     }
  
-    // ----------------------------------------------------------------
-    // Getters e Setters
-    // ----------------------------------------------------------------
+  
     public Filmes getFilme()              { return filme; }
     public void  setFilme(Filmes filme)   { this.filme = filme; }
  
