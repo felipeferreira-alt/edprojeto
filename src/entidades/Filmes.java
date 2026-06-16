@@ -7,9 +7,7 @@ public class Filmes {
     private int    ano;
     private double nota;
  
-    // ----------------------------------------------------------------
-    // Construtor
-    // ----------------------------------------------------------------
+    
     public Filmes(int codigo, String nome, String genero, int ano, double nota) {
         this.codigo = codigo;
         this.nome   = nome;
@@ -18,9 +16,8 @@ public class Filmes {
         this.nota   = nota;
     }
  
-    // ----------------------------------------------------------------
-    // Getters e Setters
-    // ----------------------------------------------------------------
+
+      
     public int getCodigo()             { return codigo; }
     public void setCodigo(int codigo)  { this.codigo = codigo; }
  
@@ -36,9 +33,8 @@ public class Filmes {
     public double getNota()            { return nota; }
     public void setNota(double nota)   { this.nota = nota; }
  
-    // ----------------------------------------------------------------
-    // Exibição
-    // ----------------------------------------------------------------
+
+      
     @Override
     public String toString() {
         return String.format(
