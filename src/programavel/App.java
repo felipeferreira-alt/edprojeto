@@ -39,7 +39,7 @@ public class App {
         }
     }
  
-    /** Lê uma String não-vazia. */
+ 
     private static String lerString(String mensagem, int maxLen) {
         while (true) {
             System.out.print(mensagem);
